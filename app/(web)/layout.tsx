@@ -1,5 +1,5 @@
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/features/app-sidebar";
+import { AppSidebar } from "@/features/_layout/app-sidebar";
 
 export default function WebLayout(props: LayoutProps<"/">) {
   return (

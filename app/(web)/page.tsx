@@ -1,12 +1,11 @@
 import { HomeHero } from "@/features/home/hero";
 import { HomePromptInput } from "@/features/home/prompt-input";
-import { SectionCards } from "@/features/section-cards";
-import { SiteHeader } from "@/features/site-header";
+import { SiteHeader } from "@/features/_layout/site-header";
 
 export default function Home() {
   return (
     <div>
-      <SiteHeader />
+      <SiteHeader title="Home" />
       <HomeHero />
       <HomePromptInput />
     </div>

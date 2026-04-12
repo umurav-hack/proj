@@ -20,6 +20,7 @@ import {
   IconUsers,
 } from "@tabler/icons-react";
 import { ListIcon } from "lucide-react";
+import Link from "next/link";
 import type * as React from "react";
 import {
   Sidebar,
@@ -46,17 +47,17 @@ const data = {
   navMain: [
     {
       title: "Home",
-      url: "#",
+      url: "/",
       icon: IconDashboard,
     },
     {
       title: "Jobs",
-      url: "#",
+      url: "/jobs",
       icon: IconBriefcase,
     },
     {
       title: "Applications",
-      url: "#",
+      url: "/applications",
       icon: IconList,
     },
     {
@@ -69,12 +70,12 @@ const data = {
   navSecondary: [
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: IconSettings,
     },
     {
       title: "Get Help",
-      url: "#",
+      url: "/help",
       icon: IconHelp,
     },
   ],
@@ -83,7 +84,21 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="offcanvas" {...props}>
-      <AppSidebarHeader />
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              asChild
+              className="data-[slot=sidebar-menu-button]:p-1.5!"
+            >
+              <Link href="/">
+                <IconInnerShadowTop className="size-5!" />
+                <span className="text-base font-semibold">Scout Inc</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
@@ -92,42 +107,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
-  );
-}
-
-function AppSidebarHeader() {
-  const { state } = useSidebar();
-  const isExpanded = state === "expanded";
-
-  return (
-    <SidebarHeader className="group/header">
-      <SidebarMenu>
-        <SidebarMenuItem className="flex items-center justify-between">
-          {/* Logo — visible when expanded, or collapsed but not hovered */}
-          <SidebarMenuButton
-            asChild
-            className={cn(
-              "w-fit data-[slot=sidebar-menu-button]:p-1.5!",
-              !isExpanded && "group-hover/header:hidden",
-            )}
-          >
-            <a href="/">
-              <IconInnerShadowTop className="size-5!" />
-            </a>
-          </SidebarMenuButton>
-
-          {/* Trigger — always visible when expanded, only on hover when collapsed */}
-          <SidebarMenuButton
-            asChild
-            className={cn(
-              "w-fit cursor-e-resize text-muted-foreground data-[slot=sidebar-menu-button]:p-1.5!",
-              !isExpanded && "hidden group-hover/header:flex",
-            )}
-          >
-            <SidebarTrigger className="text-white" />
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-    </SidebarHeader>
   );
 }
