@@ -24,7 +24,7 @@ export function HomePromptInput() {
   };
   const isSubmitDisabled = useMemo(
     () => !(text.trim() || isSubmitting),
-    [text, isSubmitting],
+    [text, isSubmitting]
   );
   return (
     <div className="container mx-auto mb-10 max-w-160 lg:max-w-3xl">

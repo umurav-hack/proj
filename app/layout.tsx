@@ -28,17 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
       className={cn(
         "h-full",
         "antialiased",
         geistSans.variable,
         geistMono.variable,
         "font-sans",
-        inter.variable,
+        inter.variable
       )}
+      lang="en"
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <Provider>{children}</Provider>
       </body>
     </html>

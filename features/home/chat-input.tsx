@@ -1,12 +1,5 @@
 "use client";
-import {
-  ArrowUpIcon,
-  BriefcaseBusinessIcon,
-  CheckIcon,
-  GlobeIcon,
-  ListIcon,
-  XIcon,
-} from "lucide-react";
+import { ArrowUpIcon, BriefcaseBusinessIcon, ListIcon } from "lucide-react";
 import {
   Attachment,
   AttachmentPreview,
@@ -16,7 +9,6 @@ import {
 import {
   PromptInput,
   PromptInputActionAddAttachments,
-  PromptInputActionAddScreenshot,
   PromptInputActionMenu,
   PromptInputActionMenuContent,
   PromptInputActionMenuTrigger,
@@ -30,7 +22,7 @@ import {
   PromptInputTools,
   usePromptInputAttachments,
 } from "@/components/ai-elements/prompt-input";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const PromptInputAttachmentsDisplay = () => {
@@ -99,13 +91,13 @@ export default function ChatInput({
               <PromptInputActionAddAttachments
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "lg" }),
-                  "inline-flex justify-normal py-1.5! pr-8! pl-2.5! font-normal [&_svg]:stroke-[1.8]",
+                  "inline-flex justify-normal py-1.5! pr-8! pl-2.5! font-normal [&_svg]:stroke-[1.8]"
                 )}
               />
               <PromptInputButton
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "lg" }),
-                  "inline-flex justify-normal gap-1.5 py-1.5! pr-8! pl-2.5! font-normal [&_svg]:stroke-[1.8]",
+                  "inline-flex justify-normal gap-1.5 py-1.5! pr-8! pl-2.5! font-normal [&_svg]:stroke-[1.8]"
                 )}
               >
                 <BriefcaseBusinessIcon className="mr-2 size-4" />
@@ -114,7 +106,7 @@ export default function ChatInput({
               <PromptInputButton
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "lg" }),
-                  "inline-flex justify-normal gap-1.5 py-1.5! pr-8! pl-2.5! font-normal [&_svg]:stroke-[1.8]",
+                  "inline-flex justify-normal gap-1.5 py-1.5! pr-8! pl-2.5! font-normal [&_svg]:stroke-[1.8]"
                 )}
               >
                 <ListIcon className="mr-2 size-4" />

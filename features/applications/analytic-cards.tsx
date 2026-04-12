@@ -1,5 +1,3 @@
-import { IconTrendingDown, IconTrendingUp } from "@tabler/icons-react";
-
 import {
   Card,
   CardDescription,
@@ -10,13 +8,13 @@ import {
 
 export function AnalyticCards() {
   return (
-    <div className="grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:shadow-none lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4 dark:*:data-[slot=card]:bg-card">
+    <div className="grid @5xl/main:grid-cols-4 @xl/main:grid-cols-2 grid-cols-1 gap-4 px-4 *:data-[slot=card]:shadow-none lg:px-6 dark:*:data-[slot=card]:bg-card">
       <Card className="@container/card">
         <CardHeader>
           <CardDescription className="text-foreground">
             New Applications
           </CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tabular-nums">
             12
           </CardTitle>
         </CardHeader>
@@ -32,7 +30,7 @@ export function AnalyticCards() {
           <CardDescription className="text-foreground">
             Total Applicants
           </CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tabular-nums">
             45
           </CardTitle>
         </CardHeader>
@@ -48,7 +46,7 @@ export function AnalyticCards() {
           <CardDescription className="text-foreground">
             Screened Candidates
           </CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tabular-nums">
             12
           </CardTitle>
         </CardHeader>
@@ -63,7 +61,7 @@ export function AnalyticCards() {
           <CardDescription className="text-foreground">
             Unscreened Candidates
           </CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-semibold @[250px]/card:text-3xl text-2xl tabular-nums">
             23
           </CardTitle>
         </CardHeader>
