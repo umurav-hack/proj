@@ -15,7 +15,7 @@ router.post('/apply', async (req, res) => {
     if (!job) return res.status(404).json({ message: "Job not found" });
 
     // 2. Ask Gemini to rank the applicant
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `
       Compare this Resume to this Job Description. 
       Job: ${job.description}
