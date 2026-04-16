@@ -28,15 +28,17 @@ import { DataTablePagination } from "./pagination";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  headerChildren?: React.ReactNode;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  headerChildren,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
+    [],
   );
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
@@ -81,7 +83,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center py-4">
+      <div className="flex flex-wrap items-center gap-2 py-4">
         <Input
           className="max-w-sm"
           onChange={(event) => setGlobalFilter(event.target.value)}
@@ -89,6 +91,7 @@ export function DataTable<TData, TValue>({
           value={globalFilter ?? ""}
         />
         <DataTableViewOptions table={table} />
+        {headerChildren}
       </div>
       <div className="overflow-hidden rounded-md border">
         <Table>
@@ -102,7 +105,7 @@ export function DataTable<TData, TValue>({
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                     </TableHead>
                   );
@@ -121,7 +124,7 @@ export function DataTable<TData, TValue>({
                     <TableCell key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </TableCell>
                   ))}

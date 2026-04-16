@@ -1,6 +1,7 @@
 "use client";
 import type { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -83,6 +84,9 @@ export const columns: ColumnDef<TApplicant>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-fit">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuItem asChild>
+              <Link href={`/applications/${applicant.id}`}>Edit</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem>View</DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(applicant.email)}
