@@ -5,7 +5,7 @@ This is the backend service for the Scout AI platform. It handles job management
 # 👥 Contributors
 # Rosine umurava AI – Lead Backend Developer
 ##  Role: AI Integration (Gemini), Database Architecture (MongoDB), and API Development.
-##   Email: gajurosine1@gmail.com
+##  Email: gajurosine1@gmail.com
 ##  GitHub: github.com/gajurosine
 
 ## 🚀 Key Features
