@@ -79,7 +79,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <Link href="/">
                 <IconInnerShadowTop className="size-5!" />
-                <span className="font-semibold text-base">Scout Inc</span>
+                <span className="font-semibold text-base">Scout AI</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
