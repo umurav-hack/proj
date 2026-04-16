@@ -14,6 +14,17 @@ router.post('/apply', async (req, res) => {
     const job = await Job.findById(jobId);
     if (!job) return res.status(404).json({ message: "Job not found" });
 
+
+    // src/routes/applicantRoutes.ts
+router.get("/", async (req, res) => {
+  try {
+    const applicants = await Applicant.find().populate('jobId');
+    res.json(applicants);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching applicants" });
+  }
+});
+
     // 2. Ask Gemini to rank the applicant
 const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });  
   const prompt = `
