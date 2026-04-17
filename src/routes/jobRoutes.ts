@@ -15,7 +15,7 @@ router.post('/create', async (req, res) => {
 });
 
 // Route to get all jobs
-router.get('/all', async (req, res) => {
+router.get('/', async (req, res) => {
   const jobs = await Job.find();
   res.json(jobs);
 });

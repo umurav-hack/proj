@@ -21,17 +21,17 @@ app.use('/api/applicants', applicantRoutes);
 
 
 //AI Test Route to test Gemini API integration 
-app.get('/test-ai', async (req, res) => {
-  try {
-    const message = await testGemini();
-    res.json({ success: true, message });
-  } catch (error) {
-    res.status(500).json({ 
-      success: false, 
-      error: error instanceof Error ? error.message : "Unknown error" 
-    });
-  }
-});
+// app.get('/test-ai', async (req, res) => {
+//   try {
+//     const message = await testGemini();
+//     res.json({ success: true, message });
+//   } catch (error) {
+//     res.status(500).json({ 
+//       success: false, 
+//       error: error instanceof Error ? error.message : "Unknown error" 
+//     });
+//   }
+// });
 
 
 
