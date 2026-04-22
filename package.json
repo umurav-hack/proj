@@ -13,16 +13,19 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.4.1",
+    "multer": "^2.1.1",
+    "pdf-parse-fork": "^1.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/multer": "^2.1.0",
     "@types/node": "^25.6.0",
     "nodemon": "^3.1.14"
   },
- "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-strip-types src/index.ts",
     "dev": "nodemon --exec node --experimental-strip-types src/index.ts"

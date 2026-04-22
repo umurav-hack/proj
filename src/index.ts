@@ -20,7 +20,7 @@ app.use('/api/applicants', applicantRoutes);
 
 
 
-//AI Test Route to test Gemini API integration 
+// AI Test Route to test Gemini API integration 
 // app.get('/test-ai', async (req, res) => {
 //   try {
 //     const message = await testGemini();
